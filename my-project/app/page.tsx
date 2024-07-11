@@ -10,7 +10,7 @@ export default function Home() {
       <div className="max-w-md flex flex-col md:flex md:flex-row lg:flex md:flex-wrap gap-10 w-full">
           {data.map((item) => {
           return (
-            <Card className=" w-[320px] md:w-[120px] lg:w-[120px] md:h-[220px] rounded-md basis-1 flex-auto ">
+            <Card className=" border-none w-[320px] md:w-[120px] lg:w-[120px] md:h-[220px] rounded-md basis-1 flex-auto ">
               {/* The image for the desktop design */}
               <Image
                 src={item.image.desktop}
@@ -36,9 +36,9 @@ export default function Home() {
                 className="rounded-md flex-none block md:hidden lg:hidden"
               />
               <CardFooter className="flex flex-col items-start text-left mt-2 text-[16px] px-1 ">
-                <p>{ item.category}</p>
+                <p className=" text-rose-400">{ item.category}</p>
                 <p className="font-bold">{ item.name}</p>
-                <p className="font-bold">${ item.price}</p>
+                <p className="font-bold text-red">${ item.price}</p>
               </CardFooter>
             </Card>
           )
