@@ -1,4 +1,5 @@
 import Image from "next/image";
+// Import the data in the data.json file
 import data from "./lib/data.json"
 import { Card,CardFooter,
    } from "./ui/components/ui/card";
@@ -8,6 +9,7 @@ export default function Home() {
     <main className="p-12 w-full">
       <h1 className="font-bold my-5 text-3xl">Desserts</h1>
       <div className="md:max-w-md lg:max-w-3xl flex flex-col md:flex md:flex-row lg:flex md:flex-wrap gap-10">
+        {/* Map through the data from the JSON file and return a  card for each item */}
           {data.map((item) => {
           return (
             <Card className=" border-none w-[320px] md:w-[120px] lg:w-[190px] md:h-[220px] lg:h-[280px] rounded-md basis-1 flex-auto ">
