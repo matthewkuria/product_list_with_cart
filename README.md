@@ -102,7 +102,7 @@ Use this section to outline areas that you want to continue focusing on in futur
 
 ## Author
 
-- Website - [Matthew Kuria](https://www.matthewkuria.netlify.app)
+- Website - [Matthew Kuria](https://matthewkuria.netlify.app)
 - Frontend Mentor - [@matthewkuria](https://www.frontendmentor.io/profile/matthewkuria)
 - Twitter - [@matthew_kuria](https://www.twitter.com/matthew_kuria)
 
