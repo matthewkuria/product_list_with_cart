@@ -15,17 +15,28 @@ export default function Home() {
           {data.map((item) => {
           return (
             <Card className=" w-[320px] md:w-[120px] md:h-[220px] rounded-md basis-1 flex-auto">
+              {/* The image for the desktop design */}
               <Image
                 src={item.image.desktop}
                 alt={item.name}
                 width={250}
                 height={150}
                 className="rounded-md flex-none hidden md:block"
-              />            
+              /> 
+              {/* The image for the tablet design */}
+              
+              {/* The image for the mobile design */}
+              <Image
+                src={item.image.mobile}
+                alt={item.name}
+                width={350}
+                height={150}
+                className="rounded-md flex-none block md:hidden"
+              />
               <CardFooter className="flex flex-col items-start text-left mt-2 text-xs ">
                 <p>{ item.category}</p>
                 <p>{ item.name}</p>
-                <p>${ item.price}</p>
+                <p className="font-bold">${ item.price}</p>
               </CardFooter>
             </Card>
           )
