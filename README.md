@@ -102,9 +102,9 @@ Use this section to outline areas that you want to continue focusing on in futur
 
 ## Author
 
-- Website - [Add your name here](https://www.your-site.com)
-- Frontend Mentor - [@yourusername](https://www.frontendmentor.io/profile/matthewkuria)
-- Twitter - [@yourusername](https://www.twitter.com/matthew_kuria)
+- Website - [Matthew Kuria](https://www.matthewkuria.netlify.app)
+- Frontend Mentor - [@matthewkuria](https://www.frontendmentor.io/profile/matthewkuria)
+- Twitter - [@matthew_kuria](https://www.twitter.com/matthew_kuria)
 
 **Note: Delete this note and add/remove/edit lines above based on what links you'd like to share.**
 
@@ -112,4 +112,3 @@ Use this section to outline areas that you want to continue focusing on in futur
 
 This is where you can give a hat tip to anyone who helped you out on this project. Perhaps you worked in a team or got some inspiration from someone else's solution. This is the perfect place to give them some credit.
 
-**Note: Delete this note and edit this section's content as necessary. If you completed this challenge by yourself, feel free to delete this section entirely.**
