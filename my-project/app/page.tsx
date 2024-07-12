@@ -13,7 +13,7 @@ export default function Home() {
           {/* Map through the data from the JSON file and return a  card for each item */}
             {data.map((item) => {
             return (
-              <Card className="drop-shadow-none border-none w-[320px] md:w-[120px] lg:w-[190px] md:h-[220px] lg:h-[280px] rounded-md basis-1 flex-auto ">
+              <Card className="drop-shadow-none border-none w-[320px] md:w-[120px] lg:w-[190px] md:h-[220px] lg:h-[290px] rounded-md basis-1 flex-auto ">
                 {/* The image for the desktop design */}
                 <Image
                   src={item.image.desktop}
@@ -52,14 +52,14 @@ export default function Home() {
         <Card className="w-[280px] h-[300px] bg-white border-none">
           <p className="text-red text-[16px] font-bold p-4">Your Cart <span>(0)</span></p>
           <Image
-            src="/assets/images/image-panna-cotta-desktop.jpg"
-            height={100}
-            width={100}
+            src="/assets/images/illustration-empty-cart.svg"
+            height={150}
+            width={150}
             alt="The image illustration for the empty cart"
-            className="flex items-center"
+            className="mx-auto"
           />
           <CardFooter>
-            <p className="text-rose-500">Your items will appear here</p>
+            <p className="text-rose-500 mx-auto">Your items will appear here</p>
           </CardFooter>
         </Card>
       </div>
