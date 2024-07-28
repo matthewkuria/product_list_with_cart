@@ -5,12 +5,20 @@ import { Button } from "./components/ui/button"
 import { useState } from "react"
 
 
-const CardItem = ({item}:any) => {  
+const CardItem = ({ item }: any) => {  
   const [showControls, setShowControls] = useState(false);
   const [quantity, setQuantity] = useState(1);
+  const handleAdd = () => {
+    setQuantity(quantity => quantity + 1)
+  }
+   const handleMinus = () => {
+    setQuantity(quantity => quantity - 1)
+  }
   const handleAddToCartClick = () => {
         setShowControls(true);
-    }; 
+        
+  }; 
+ 
     return (
         <Card key={item.name} className="drop-shadow-none border-none w-[320px] md:w-[120px] lg:w-[150px] md:h-[220px] lg:h-[290px] rounded-md basis-1 flex-auto ">
                 {/* The image for the desktop design */}
@@ -49,9 +57,9 @@ const CardItem = ({item}:any) => {
                   />
                     {showControls ? (
                     <div className="controls">
-                        <button  className="inner-btn">-</button>
+                        <button onClick={handleMinus} className="inner-btn">-</button>
                         <span className="quantity">{quantity}</span>
-                        <button  className="inner-btn">+</button>
+                        <button onClick={handleAdd} className="inner-btn">+</button>
                     </div>
                 ) : (
                     'Add to Cart'
