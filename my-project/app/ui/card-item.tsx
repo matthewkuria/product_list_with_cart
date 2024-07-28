@@ -13,12 +13,12 @@ const CardItem = ({item}:any) => {
         setShowControls(true);
     }; 
     return (
-        <Card key={item.name} className="drop-shadow-none border-none w-[320px] md:w-[120px] lg:w-[190px] md:h-[220px] lg:h-[290px] rounded-md basis-1 flex-auto ">
+        <Card key={item.name} className="drop-shadow-none border-none w-[320px] md:w-[120px] lg:w-[150px] md:h-[220px] lg:h-[290px] rounded-md basis-1 flex-auto ">
                 {/* The image for the desktop design */}
                 <Image
                   src={item.image.desktop}
                   alt={item.name}
-                  width={220}
+                  width={180}
                   height={100}
                   className="rounded-lg flex-none hidden md:hidden lg:block mx-auto"
                 /> 
