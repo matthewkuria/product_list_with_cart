@@ -5,8 +5,7 @@ import { Button } from "./components/ui/button"
 import { useState } from "react"
 
 
-const CardItem = ({item}:any) => {
-  
+const CardItem = ({item}:any) => {  
   const [showControls, setShowControls] = useState(false);
   const [quantity, setQuantity] = useState(1);
   const handleAddToCartClick = () => {
@@ -40,7 +39,7 @@ const CardItem = ({item}:any) => {
                 />              
                 <Button
                   onClick={handleAddToCartClick}
-                  className="flex mx-auto border border-red px-6 py-1 hover:bg-red hover:text-white font-bold ">
+                  className="flex mx-auto border rounded-full border-red px-7 py-0 hover:bg-red hover:text-white font-bold ">
                   <Image
                     src="/assets/images/icon-add-to-cart.svg"
                     alt="The add to cart icon for the button"
