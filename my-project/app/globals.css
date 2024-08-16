@@ -21,6 +21,9 @@
     display: flex;
     align-items: center;
     gap: 10px;
+    padding: 2px;
+    border: #fff;
+    color: #fff;
 }
 
 .inner-btn {
@@ -32,7 +35,14 @@
     font-size: 16px;
     cursor: pointer;
 }
-
+.inner-btn .active{
+    color: #c73a0f;
+    border: 1px solid;
+    border-radius: 50%;
+    padding: 1px 3px;
+    font-size: 16px;
+    cursor: pointer;
+}
 .quantity {
     font-size: 18px;
     padding: 0 10px;
