@@ -5,8 +5,8 @@ import data from "./lib/data.json"
 import { Card,CardFooter,
 } from "./ui/components/ui/card";
 import CardItem from "./ui/card-item";
-import { Button } from "./ui/components/ui/button";
 import { useState } from "react";
+import Cart from "./ui/cart";
 export default function Home() { 
   return (
     <main className="flex flex-col md:flex-row p-12 w-full bg-rose-100">
@@ -22,6 +22,7 @@ export default function Home() {
         </div>
       </div>
       <div className="md:ml-56">
+        <Cart />
         <Card className="w-[280px] h-[300px] bg-white border-none">
           <p className="text-red text-[16px] font-bold p-4">Your Cart <span>(0)</span></p>
           <Image
