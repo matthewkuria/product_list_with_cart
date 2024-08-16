@@ -15,35 +15,31 @@ const Cart = () => {
 
     return (
         <div>
-        <Card className="w-[280px] h-[300px] bg-white border-none">
-          <p className="text-red text-[16px] font-bold p-4">Your Cart <span>({ cartItems.length})</span></p>
-         
-          <CardFooter>
-            <p className="text-rose-500 mx-auto">Order Total</p>
-          </CardFooter>
-        </Card>
-            <h2></h2>
-            {cartItems.length === 0 ? (
-                <p>No items in cart</p>
-            ) : (
-                <ul>
-                    {cartItems.map((item: { id: React.Key | null | undefined; name: string | number | bigint | boolean | React.ReactElement<any, string | React.JSXElementConstructor<any>> | Iterable<React.ReactNode> | React.ReactPortal | Promise<React.AwaitedReactNode> | null | undefined; price: string | number | bigint | boolean | React.ReactElement<any, string | React.JSXElementConstructor<any>> | Iterable<React.ReactNode> | React.ReactPortal | Promise<React.AwaitedReactNode> | null | undefined; quantity: string | number | readonly string[] | undefined; }) => (
-                        <li key={item.id}>
-                            <h4>{item.name}</h4>
-                            <p>Price: {item.price}</p>
-                            <p>Quantity: 
-                                <input
-                                    type="number"
-                                    value={item.quantity}
-                                    onChange={(event) => handleQuantityChange(item.id, event)}
-                                    min="1"
-                                />
-                            </p>
-                            <button onClick={() => removeFromCart(item.id)}>Remove</button>
-                        </li>
-                    ))}
-                </ul>
-            )}
+            <Card className="w-[280px] h-[300px] bg-white border-none">
+            <p className="text-red text-[16px] font-bold p-4">Your Cart <span>({ cartItems.length})</span></p>
+                {cartItems.length === 0 ? (
+                    <p>No items in cart</p>
+                ) : (
+                    <ul>
+                        {cartItems.map((item: { id: React.Key | null | undefined; name: string | number | bigint | boolean | React.ReactElement<any, string | React.JSXElementConstructor<any>> | Iterable<React.ReactNode> | React.ReactPortal | Promise<React.AwaitedReactNode> | null | undefined; price: string | number | bigint | boolean | React.ReactElement<any, string | React.JSXElementConstructor<any>> | Iterable<React.ReactNode> | React.ReactPortal | Promise<React.AwaitedReactNode> | null | undefined; quantity: string | number | readonly string[] | undefined; }) => (
+                            <div  key={item.id} className='flex flex-row text-sm justify-between '>
+                                <div className="flex flex-col">
+                                    <h4>{item.name}</h4>
+                                    <div className="flex justify-around">
+                                        <p className='text-red'>x{ item.quantity}</p>
+                                        <p>@${item.price}</p>
+                                        <p className="">${item.price }</p>
+                                    </div>
+                                </div>
+                                <button className='font-bold' onClick={() => removeFromCart(item.id)}>X</button>
+                            </div>
+                        ))}
+                    </ul>
+                )}
+            <CardFooter>
+                <p className="text-rose-500 mx-auto">Order Total</p>
+            </CardFooter>
+            </Card>           
         </div>
     );
 };
