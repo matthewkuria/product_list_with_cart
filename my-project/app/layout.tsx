@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import { redHatText } from "@/app/ui/fonts";
 import "./globals.css";
+import { CartProvider } from "./lib/contexts/cartcontext";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -17,7 +18,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={redHatText.className}>{children}</body>
+      <body className={redHatText.className}>
+        <CartProvider>
+          {children}
+        </CartProvider>
+      </body>
     </html>
   );
 }

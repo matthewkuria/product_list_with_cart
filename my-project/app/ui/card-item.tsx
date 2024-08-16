@@ -3,9 +3,11 @@ import Image from "next/image"
 import { Card, CardFooter } from "./components/ui/card"
 import { Button } from "./components/ui/button"
 import { useState } from "react"
+import { useCart } from "../lib/contexts/cartcontext"
 
 
-const CardItem = ({ item }: any) => {  
+const CardItem = ({ item }: any) => { 
+  const { addToCart } = useCart();
   const [showControls, setShowControls] = useState(false);
   const [quantity, setQuantity] = useState(1);
   const handleAdd = () => {
@@ -14,11 +16,8 @@ const CardItem = ({ item }: any) => {
    const handleMinus = () => {
     setQuantity(quantity => quantity - 1)
   }
-  const handleAddToCartClick = () => {
-        setShowControls(true);
-        
-  }; 
- 
+  
+
     return (
         <Card key={item.name} className="drop-shadow-none border-none w-[320px] md:w-[120px] lg:w-[150px] md:h-[220px] lg:h-[290px] rounded-md basis-1 flex-auto ">
                 {/* The image for the desktop design */}
@@ -46,7 +45,7 @@ const CardItem = ({ item }: any) => {
                   className="rounded-md flex-none block md:hidden lg:hidden"
                 />              
                 <Button
-                  onClick={handleAddToCartClick}
+                  onClick={() => addToCart(item)}
                   className="flex mx-auto border rounded-full border-red px-7 py-0 hover:bg-red hover:text-white font-bold ">
                   <Image
                     src="/assets/images/icon-add-to-cart.svg"

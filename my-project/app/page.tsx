@@ -7,7 +7,9 @@ import { Card,CardFooter,
 import CardItem from "./ui/card-item";
 import { useState } from "react";
 import Cart from "./ui/cart";
-export default function Home() { 
+import { useCart } from './lib/contexts/cartcontext'
+export default function Home() {
+  const { cartItems, removeFromCart, updateQuantity } = useCart();
   return (
     <main className="flex flex-col md:flex-row p-12 w-full bg-rose-100">
       <div className="flex flex-col">
@@ -22,8 +24,9 @@ export default function Home() {
         </div>
       </div>
       <div className="md:ml-56">
-        <Cart />
-        <Card className="w-[280px] h-[300px] bg-white border-none">
+        {cartItems.length > 0 ? 
+          <Cart /> :
+          <Card className="w-[280px] h-[300px] bg-white border-none">
           <p className="text-red text-[16px] font-bold p-4">Your Cart <span>(0)</span></p>
           <Image
             src="/assets/images/illustration-empty-cart.svg"
@@ -36,6 +39,7 @@ export default function Home() {
             <p className="text-rose-500 mx-auto">Your items will appear here</p>
           </CardFooter>
         </Card>
+        }
       </div>
     </main>
   );
