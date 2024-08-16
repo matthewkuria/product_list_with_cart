@@ -1,4 +1,5 @@
 import React from 'react';
+import { MdOutlineCancel } from "react-icons/md";
 import { useCart } from '../lib/contexts/cartcontext'
 import { Card, CardFooter } from "./components/ui/card"
 const Cart = () => {
@@ -31,7 +32,7 @@ const Cart = () => {
                                         <p className="font-bold">${item.price }</p>
                                     </div>
                                 </div>
-                                <button className='font-bold' onClick={() => removeFromCart(item.id)}>X</button>
+                                <button className=' flex ' onClick={() => removeFromCart(item.id)}> <MdOutlineCancel /></button>
                             </div>
                         ))}
                     </ul>
