@@ -45,12 +45,12 @@ const Cart = () => {
                         </ul>
                         
                 )}
-            <CardFooter>
-                    <div className="text-rose-500 flex flex-row justify-around">
-                        <p>Order Total</p>
-                        <p className='font-bold pl-10'>${ subtotal}</p>
+           
+                    <div className="text-rose-500 flex justify-between p-2 mt-auto">
+                        <div>Order Total</div>
+                        <div className='font-bold  text-rose-900'>${ subtotal}</div>
                     </div>
-            </CardFooter>
+          
             </Card>           
         </div>
     );
