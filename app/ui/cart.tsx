@@ -13,7 +13,10 @@ const Cart = () => {
             removeFromCart(productId);
         }
     };
-
+  // Calculate the cart subtotal
+    const subtotal = cartItems.reduce((acc: number, item: { price: number; quantity: number; }) => {
+        return acc + item.price * item.quantity;
+    }, 0);
     return (
         <div>
             <Card className="w-[280px] h-[300px] bg-white border-none">
@@ -35,7 +38,9 @@ const Cart = () => {
                                 <button className=' flex ' onClick={() => removeFromCart(item.id)}> <MdOutlineCancel /></button>
                             </div>
                         ))}
-                    </ul>
+                             <h3>Subtotal: ${subtotal.toFixed(2)}</h3>
+                        </ul>
+                        
                 )}
             <CardFooter>
                 <p className="text-rose-500 mx-auto">Order Total</p>
