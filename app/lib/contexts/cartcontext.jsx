@@ -6,23 +6,23 @@ const CartContext = createContext();
 
 // Create a provider component
 export const CartProvider = ({ children }) => {
-    const [cartItems, setCartItems] = useState({});
+    const [cartItems, setCartItems] = useState([]);
 
-  const addToCart = (product) => {
+  const addToCart = (item) => {
         setCartItems((prevCartItems) => {
-            if (prevCartItems[product.id]) {
+            if (prevCartItems[item.id]) {
                 return {
                     ...prevCartItems,
-                    [product.id]: {
-                        ...prevCartItems[product.id],
-                        quantity: prevCartItems[product.id].quantity + 1
+                    [item.id]: {
+                        ...prevCartItems[item.id],
+                        quantity: prevCartItems[item.id].quantity + 1
                     }
                 };
             } else {
                 return {
                     ...prevCartItems,
-                    [product.id]: {
-                        ...product,
+                    [item.id]: {
+                        ...item,
                         quantity: 1
                     }
                 };

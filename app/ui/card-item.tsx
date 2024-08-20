@@ -7,10 +7,7 @@ import { useCart } from "../lib/contexts/cartcontext"
 
 
 const CardItem = ({ item }: any) => { 
-  const { cartItems,addToCart, decreaseQuantity, increaseQuantity } = useCart();
- 
- 
-  
+  const { cartItems,addToCart, decreaseQuantity, increaseQuantity } = useCart();  
 
     return (
         <Card className="drop-shadow-none border-none w-[320px] md:w-[120px] lg:w-[150px] md:h-[220px] lg:h-[290px] rounded-md basis-1 flex-auto ">
