@@ -23,7 +23,8 @@ const Cart = () => {
         <div>
              {isEmpty ? (
                    <EmptyCart />
-                ) : (
+            ) : (
+            <div className='bg-white p-3'>
             <Card className="w-[280px] h-auto bg-white border-none">
             <p className="text-red text-[16px] font-bold p-4">Your Cart <span>({ cartItemsArray.length})</span></p>
                
@@ -46,8 +47,11 @@ const Cart = () => {
                     <div className="text-rose-500 flex justify-between p-2 mt-auto">
                         <div>Order Total</div>
                         <div className='font-bold  text-rose-900'>${subTotal.toFixed(2) }</div>
-                    </div>         
-                </Card> 
+                        </div>                        
+                        </Card>
+                        <div className=" flex justify-center  p-2 bg-rose-100 mt-2 rounded-lg text-xs">This is <span className="font-bold mx-1">carbon-neutral</span> delivery</div>
+                <button className='bg-red flex text-white mx-auto w-full text-center justify-center py-1 px-7 rounded-full mt-3'>Confirm Order</button>
+                </div>    
             )}        
         </div>
     );
