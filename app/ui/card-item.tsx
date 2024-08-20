@@ -7,7 +7,7 @@ import { useCart } from "../lib/contexts/cartcontext"
 
 
 const CardItem = ({ item }: any) => { 
-  const { cartItems,addToCart, decreaseQuantity, increaseQuantity, handleIncreaseQuantity, handleDecreaseQuantity } = useCart();
+  const { cartItems,addToCart, decreaseQuantity, increaseQuantity } = useCart();
   const [showControls, setShowControls] = useState(true);
  
  
@@ -51,12 +51,12 @@ const CardItem = ({ item }: any) => {
                   />
                     {cartItems[item.id] ? (
                     <div className="controls">
-                        <button onClick={handleDecreaseQuantity} className="inner-btn">-</button>
-                        <span className="quantity">{cartItems[item.id].quantity}</span>
-                        <button onClick={handleIncreaseQuantity} className="inner-btn">+</button>
+                        <button onClick={()=>decreaseQuantity(item.id)} className="inner-btn">-</button>
+                        <span className="quantity">{cartItems[item.id]?.quantity}</span>
+                        <button onClick={()=>increaseQuantity(item.id)} className="inner-btn">+</button>
                     </div>
                 ) : (
-                    'Add to Cart'
+                  "Add to Cart"
                 )}
                 </Button>
                 <CardFooter className="flex flex-col items-start text-left mt-2  px-1 font-bold ">
