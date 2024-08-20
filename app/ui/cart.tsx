@@ -25,12 +25,12 @@ const Cart = () => {
         }
     };
   // Calculate the cart subtotal
-    const subtotal = cartItems.reduce((acc: number, item: { price: number; quantity: number; }) => {
+    const subTotal = cartItems.reduce((acc: number, item: { price: number; quantity: number; }) => {
         return acc + item.price * item.quantity;
     }, 0);
       // Calculate the total item count
-    const itemCount = cartItems.reduce((acc: any, item: { quantity: any; }) => {
-        return acc + item.quantity * item.quantity;
+    const itemSubtotal = cartItems.reduce((acc: any, item: { price:number, quantity: any; }) => {
+        return acc + item.price * item.quantity;
     }, 0);
     return (
         <div>
@@ -47,7 +47,7 @@ const Cart = () => {
                                     <div className="flex justify-around text-rose-300 ">
                                         <p className='text-red font-bold'>x{ item.quantity}</p>
                                         <p>@${item.price}</p>
-                                        <p className="font-bold">${itemCount }</p>
+                                        <p className="font-bold">${itemSubtotal.toFixed(2) }</p>
                                     </div>
                                 </div>
                                 <button className=' flex ' onClick={() => removeFromCart(item.id)}> <MdOutlineCancel /></button>
@@ -59,7 +59,7 @@ const Cart = () => {
            
                     <div className="text-rose-500 flex justify-between p-2 mt-auto">
                         <div>Order Total</div>
-                        <div className='font-bold  text-rose-900'>${ subtotal.toFixed(2)}</div>
+                        <div className='font-bold  text-rose-900'>${ subTotal.toFixed(2)}</div>
                     </div>
           
             </Card>           
