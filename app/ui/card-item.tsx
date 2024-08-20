@@ -8,7 +8,6 @@ import { useCart } from "../lib/contexts/cartcontext"
 
 const CardItem = ({ item }: any) => { 
   const { cartItems,addToCart, decreaseQuantity, increaseQuantity } = useCart();
-  const [showControls, setShowControls] = useState(true);
  
  
   
