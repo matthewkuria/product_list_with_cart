@@ -18,7 +18,7 @@ export default function Home() {
           {/* Map through the data from the JSON file and return a  card for each item */}
             {data.map((item) => {
               return (
-                <CardItem key={item.name} item={item} />
+                <CardItem key={item.id} item={item} />
             )
           })}
         </div>
