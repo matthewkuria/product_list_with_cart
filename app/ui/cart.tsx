@@ -19,24 +19,24 @@ const Cart = () => {
     }, 0);
       // Calculate the total item count
     const itemCount = cartItems.reduce((acc: any, item: { quantity: any; }) => {
-        return acc + item.quantity;
+        return acc + item.quantity * item.quantity;
     }, 0);
     return (
         <div>
-            <Card className="w-[280px] h-[300px] bg-white border-none">
+            <Card className="w-[280px] h-auto bg-white border-none">
             <p className="text-red text-[16px] font-bold p-4">Your Cart <span>({ cartItems.length})</span></p>
                 {cartItems.length === 0 ? (
                     <p>No items in cart</p>
                 ) : (
                     <ul>
-                        {cartItems.map((item: { id: React.Key | null | undefined; name: string | number | bigint | boolean | React.ReactElement<any, string | React.JSXElementConstructor<any>> | Iterable<React.ReactNode> | React.ReactPortal | Promise<React.AwaitedReactNode> | null | undefined; price: string | number | bigint | boolean | React.ReactElement<any, string | React.JSXElementConstructor<any>> | Iterable<React.ReactNode> | React.ReactPortal | Promise<React.AwaitedReactNode> | null | undefined; quantity: string | number | readonly string[] | undefined; }) => (
+                        {cartItems.map((item: { id: React.Key | null | undefined; name: string | number | bigint | boolean | React.ReactElement<any, string | React.JSXElementConstructor<any>> | Iterable<React.ReactNode> | React.ReactPortal | Promise<React.AwaitedReactNode> | null | undefined; price: string | number | bigint | boolean | React.ReactElement<any, string | React.JSXElementConstructor<any>> | Iterable<React.ReactNode> | React.ReactPortal | Promise<React.AwaitedReactNode> | null | undefined; quantity: string | number | undefined; }) => (
                             <div  key={item.id} className='flex flex-row text-sm justify-between p-5 '>
                                 <div className="flex flex-col">
                                     <h4>{item.name}</h4>
                                     <div className="flex justify-around text-rose-300 ">
-                                        <p className='text-red font-bold'>x{ itemCount}</p>
+                                        <p className='text-red font-bold'>x{ item.quantity}</p>
                                         <p>@${item.price}</p>
-                                        <p className="font-bold">${subtotal.toFixed(2) }</p>
+                                        <p className="font-bold">${itemCount }</p>
                                     </div>
                                 </div>
                                 <button className=' flex ' onClick={() => removeFromCart(item.id)}> <MdOutlineCancel /></button>
@@ -48,7 +48,7 @@ const Cart = () => {
            
                     <div className="text-rose-500 flex justify-between p-2 mt-auto">
                         <div>Order Total</div>
-                        <div className='font-bold  text-rose-900'>${ subtotal}</div>
+                        <div className='font-bold  text-rose-900'>${ subtotal.toFixed(2)}</div>
                     </div>
           
             </Card>           
