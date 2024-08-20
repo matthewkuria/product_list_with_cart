@@ -5,12 +5,23 @@ import { Card, CardFooter } from "./components/ui/card"
 const Cart = () => {
     const { cartItems, removeFromCart, updateQuantity } = useCart();
 
-    const handleQuantityChange = (productId:any, event:any) => {
-        const quantity = parseInt(event.target.value);
-        if (quantity > 0) {
-            updateQuantity(productId, quantity);
-        } else {
-            removeFromCart(productId);
+ // Function to handle increasing the quantity
+    const handleIncreaseQuantity = (productId: any) => {
+        const product = cartItems.find((item: { id: any; }) => item.id === productId);
+        if (product) {
+            updateQuantity(productId, product.quantity + 1);
+        }
+    };
+
+    // Function to handle decreasing the quantity
+    const handleDecreaseQuantity = (productId: any) => {
+        const product = cartItems.find((item: { id: any; }) => item.id === productId);
+        if (product) {
+            if (product.quantity > 1) {
+                updateQuantity(productId, product.quantity - 1);
+            } else {
+                removeFromCart(productId); // Remove item if quantity goes below 1
+            }
         }
     };
   // Calculate the cart subtotal
