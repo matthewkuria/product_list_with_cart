@@ -39,26 +39,30 @@ const CardItem = ({ item }: any) => {
                   height={150}
                   className="rounded-md flex-none block md:hidden lg:hidden"
                 />              
-                <Button
-                  onClick={() => addToCart(item)}
-                  className="flex mx-auto border rounded-full border-red px-7 py-0 hover:bg-red hover:text-white font-bold ">
-                  <Image
-                    src="/assets/images/icon-add-to-cart.svg"
-                    alt="The add to cart icon for the button"
-                    width={20}
-                    height={10}
-                    className=""
-                  />
+                <div>                  
                     {cartItems[item.id] ? (
-                    <div className="controls">
+                    <div className="flex mx-auto justify-around bg-red rounded-full font-bold max-w-40 p-1">
                         <button onClick={()=>decreaseQuantity(item.id)} className="inner-btn">-</button>
                         <span className="quantity">{cartItems[item.id]?.quantity}</span>
                         <button onClick={()=>increaseQuantity(item.id)} className="inner-btn">+</button>
                     </div>
-                ) : (
-                  "Add to Cart"
+          ) : (
+              <button
+                className="flex mx-auto border rounded-full border-red px-7 py-2  hover:text-red font-bold "
+                onClick={() => addToCart(item)}
+              >
+                <Image
+                    src="/assets/images/icon-add-to-cart.svg"
+                    alt="The add to cart icon for the button"
+                    width={20}
+                    height={10}
+                    className="mx-2"
+                  />
+                Add to Cart
+              </button>
+                  
                 )}
-                </Button>
+                </div>
                 <CardFooter className="flex flex-col items-start text-left mt-2  px-1 font-bold ">
                   <p className="font-normal text-rose-400">{ item.category}</p>
                   <p className="text-[16px]">{ item.name}</p>

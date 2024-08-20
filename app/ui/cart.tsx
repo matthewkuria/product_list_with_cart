@@ -4,7 +4,7 @@ import { useCart } from '../lib/contexts/cartcontext'
 import { Card, CardFooter } from "./components/ui/card"
 const Cart = () => {
     const { cartItems, removeFromCart, updateQuantity } = useCart();
-
+console.log(cartItems)
   // Calculate the cart subtotal
     const subTotal = cartItems.reduce((acc: number, item: { price: number; quantity: number; }) => {
         return acc + item.price * item.quantity;
