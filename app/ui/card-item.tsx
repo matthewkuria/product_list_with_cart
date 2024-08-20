@@ -7,19 +7,14 @@ import { useCart } from "../lib/contexts/cartcontext"
 
 
 const CardItem = ({ item }: any) => { 
-  const { addToCart } = useCart();
-  const [showControls, setShowControls] = useState(false);
-  const [quantity, setQuantity] = useState(1);
-  const handleAdd = () => {
-    setQuantity(quantity => quantity + 1)
-  }
-   const handleMinus = () => {
-    setQuantity(quantity => quantity - 1)
-  }
+  const { addToCart, decreaseQuantity, increaseQuantity } = useCart();
+  const [showControls, setShowControls] = useState(true);
+ 
+ 
   
 
     return (
-        <Card key={item.name} className="drop-shadow-none border-none w-[320px] md:w-[120px] lg:w-[150px] md:h-[220px] lg:h-[290px] rounded-md basis-1 flex-auto ">
+        <Card key={item.id} className="drop-shadow-none border-none w-[320px] md:w-[120px] lg:w-[150px] md:h-[220px] lg:h-[290px] rounded-md basis-1 flex-auto ">
                 {/* The image for the desktop design */}
                 <Image
                   src={item.image.desktop}
@@ -56,9 +51,9 @@ const CardItem = ({ item }: any) => {
                   />
                     {showControls ? (
                     <div className="controls">
-                        <button onClick={handleMinus} className="inner-btn">-</button>
-                        <span className="quantity">{quantity}</span>
-                        <button onClick={handleAdd} className="inner-btn">+</button>
+                        <button onClick={decreaseQuantity} className="inner-btn">-</button>
+                        <span className="quantity">{}</span>
+                        <button onClick={increaseQuantity} className="inner-btn">+</button>
                     </div>
                 ) : (
                     'Add to Cart'

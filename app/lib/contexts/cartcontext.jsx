@@ -20,6 +20,27 @@ export const CartProvider = ({ children }) => {
             setCartItems([...cartItems, { ...product, quantity: 1 }]);
         }
     };
+    const increaseQuantity = (productId) => {
+        setCartItems((prevCartItems) => ({
+            ...prevCartItems,
+            [productId]: {
+                ...prevCartItems[productId],
+                quantity: prevCartItems[productId].quantity + 1
+            }
+        }));
+    };
+
+    const decreaseQuantity = (productId) => {
+        setCartItems((prevCartItems) => {
+            const updatedItems = { ...prevCartItems };
+            if (updatedItems[productId].quantity > 1) {
+                updatedItems[productId].quantity -= 1;
+            } else {
+                delete updatedItems[productId];
+            }
+            return updatedItems;
+        });
+    };
 
     const removeFromCart = (productId) => {
         setCartItems(cartItems.filter(item => item.id !== productId));
@@ -28,7 +49,7 @@ export const CartProvider = ({ children }) => {
     
 
     return (
-        <CartContext.Provider value={{ cartItems, addToCart, removeFromCart, updateQuantity }}>
+        <CartContext.Provider value={{ cartItems, addToCart, removeFromCart, increaseQuantity, decreaseQuantity}}>
             {children}
         </CartContext.Provider>
     );
