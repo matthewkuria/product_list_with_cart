@@ -17,7 +17,7 @@ const Cart = () => {
     }, 0);
 //       // Calculate the total item count
     const itemSubtotal = cartItemsArray.reduce((acc:number, item:any) => {
-        return acc + item.price * item.quantity;
+        return  item.price * item.quantity;
     }, 0);
     return (
         <div>
@@ -35,7 +35,7 @@ const Cart = () => {
                                     <div className="flex justify-around text-rose-300 ">
                                         <p className='text-red font-bold'>x{ item.quantity}</p>
                                         <p>@${item.price}</p>
-                                        <p className="font-bold">${ }</p>
+                                        <p className="font-bold">${itemSubtotal }</p>
                                     </div>
                                 </div>
                                 <button className=' flex ' onClick={() => removeFromCart(item.id)}> <MdOutlineCancel /></button>
