@@ -12,11 +12,11 @@ const Cart = () => {
     const isEmpty = Object.keys(cartItems).length === 0;
 
 //   // Calculate the cart subtotal
-    const subTotal = cartItemsArray.reduce((acc:any, item:any) => {
+    const subTotal = cartItemsArray.reduce((acc:number, item:any) => {
         return acc + item.price * item.quantity;
     }, 0);
 //       // Calculate the total item count
-    const itemSubtotal = cartItemsArray.reduce((acc:any, item:any) => {
+    const itemSubtotal = cartItemsArray.reduce((acc:number, item:any) => {
         return acc + item.price * item.quantity;
     }, 0);
     return (
