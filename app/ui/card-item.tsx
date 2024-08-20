@@ -7,14 +7,14 @@ import { useCart } from "../lib/contexts/cartcontext"
 
 
 const CardItem = ({ item }: any) => { 
-  const { addToCart, decreaseQuantity, increaseQuantity } = useCart();
+  const { cartItems,addToCart, decreaseQuantity, increaseQuantity } = useCart();
   const [showControls, setShowControls] = useState(true);
  
  
   
 
     return (
-        <Card key={item.id} className="drop-shadow-none border-none w-[320px] md:w-[120px] lg:w-[150px] md:h-[220px] lg:h-[290px] rounded-md basis-1 flex-auto ">
+        <Card className="drop-shadow-none border-none w-[320px] md:w-[120px] lg:w-[150px] md:h-[220px] lg:h-[290px] rounded-md basis-1 flex-auto ">
                 {/* The image for the desktop design */}
                 <Image
                   src={item.image.desktop}
@@ -49,10 +49,10 @@ const CardItem = ({ item }: any) => {
                     height={10}
                     className=""
                   />
-                    {showControls ? (
+                    {cartItems[item.id] ? (
                     <div className="controls">
                         <button onClick={decreaseQuantity} className="inner-btn">-</button>
-                        <span className="quantity">{}</span>
+                        <span className="quantity">{cartItems[item.id].quantity}</span>
                         <button onClick={increaseQuantity} className="inner-btn">+</button>
                     </div>
                 ) : (
