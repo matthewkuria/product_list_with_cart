@@ -72,6 +72,7 @@ const Cart = () => {
                             />
                             <p className="">This is <span className="font-bold mx-1">carbon-neutral</span> delivery</p>
                         </div>
+                        {/* The Modal component */}
                         <Dialog>
                             <DialogTrigger asChild>
                                 <Button  className='bg-red flex text-white mx-auto w-full text-center justify-center py-1 px-7 rounded-full mt-3' variant="outline">Confirm Order</Button>
@@ -83,7 +84,27 @@ const Cart = () => {
                                     We hope you enjoy your food! 
                                 </DialogDescription>
                                 </DialogHeader>
-                              
+                                {cartItemsArray.map((item: any) => (
+                                    <div key={item.id} className='flex flex-row text-sm justify-between p-5 bg-rose-100'>
+                                        <div className="">
+                                        <Image
+                                            src={item.image}
+                                            alt="The image of {}"
+                                            height={10}
+                                            width={10}
+                                            />
+                                        </div>
+                                        <div className="flex flex-col">
+                                            <h4>{item.name}</h4>
+                                            <div className="flex justify-around text-rose-300 ">
+                                                <p className='text-red font-bold'>x{ item.quantity}</p>
+                                                <p>@${item.price}</p>
+                                                <p className="font-bold">${itemSubtotal }</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                ))}
                                 <DialogFooter>
                                 <Button  className='bg-red flex text-white mx-auto w-full text-center justify-center py-1 px-7 rounded-full mt-3' variant="outline">Start New Order</Button>
                                 </DialogFooter>
