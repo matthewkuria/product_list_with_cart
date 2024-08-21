@@ -57,9 +57,9 @@ const Cart = () => {
                         ))}                            
                         </ul>              
            
-                    <div className="text-rose-500 flex justify-between p-2 mt-auto">
-                        <div>Order Total</div>
-                        <div className='font-bold  text-rose-900'>${subTotal.toFixed(2) }</div>
+                        <div className="text-rose-500 flex justify-between p-2 mt-auto">
+                            <div>Order Total</div>
+                            <div className='font-bold  text-rose-900'>${subTotal.toFixed(2) }</div>
                         </div>                        
                         </Card>
                         <div className=" flex justify-center items-center  p-2 bg-rose-100 mt-2 rounded-lg text-xs">
@@ -79,34 +79,46 @@ const Cart = () => {
                             </DialogTrigger>
                             <DialogContent className="sm:max-w-[425px]">
                                 <DialogHeader>
+                                    <Image
+                                        src="/assets/images/icon-order-confirmed.svg"
+                                        alt='The order confirmed tick'
+                                        height={30}
+                                        width={30}
+                                    />
                                 <DialogTitle>Order Confirmed</DialogTitle>
                                 <DialogDescription>
                                     We hope you enjoy your food! 
                                 </DialogDescription>
                                 </DialogHeader>
                                 {cartItemsArray.map((item: any) => (
-                                    <div key={item.id} className='flex flex-row text-sm justify-between p-5 bg-rose-100'>
-                                        <div className="">
-                                        <Image
+                                    <>
+                                    <div key={item.id} className='flex flex-row text-sm justify-between p-2 bg-rose-100 my-0'>                                       
+                                        <div className="flex">                                
+                                            <Image
                                             src={item.image}
                                             alt="The image of {}"
                                             height={10}
-                                            width={10}
+                                                width={10}
+                                                className='block mx-1'
                                             />
-                                        </div>
-                                        <div className="flex flex-col">
-                                            <h4>{item.name}</h4>
-                                            <div className="flex justify-around text-rose-300 ">
-                                                <p className='text-red font-bold'>x{ item.quantity}</p>
-                                                <p>@${item.price}</p>
-                                                <p className="font-bold">${itemSubtotal }</p>
+                                            <div className="flex flex-col justify-around font-bold text-xs mx-2">                                              
+                                                <h4>{item.name}</h4>
+                                                <p className='text-red font-bold'>x{ item.quantity}</p>                                                
                                             </div>
                                         </div>
-                                    </div>
-                                    
-                                ))}
-                                <DialogFooter>
-                                <Button  className='bg-red flex text-white mx-auto w-full text-center justify-center py-1 px-7 rounded-full mt-3' variant="outline">Start New Order</Button>
+                                        <div className="">
+                                            <p className="font-bold">${subTotal }</p>
+                                        </div>
+                                    </div>                                    
+                                    </>
+                                                
+                                ))}                                
+                                <div className="text-rose-500 flex justify-between p-2 mt-auto">
+                                    <div>Order Total</div>
+                                    <div className='font-bold  text-rose-900'>${subTotal.toFixed(2) }</div>
+                                </div>
+                                <DialogFooter className='py-4'>
+                                    <Button className='bg-red flex text-white mx-auto w-full text-center justify-center py-1 px-7 rounded-full mt-3' variant="outline">Start New Order</Button>                                    
                                 </DialogFooter>
                             </DialogContent>
                             </Dialog>
