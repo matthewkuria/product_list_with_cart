@@ -25,26 +25,37 @@
     border: #fff;
     color: #c73a0f;
 }
+.add-or-remove-item{
+    padding: .5rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    background-color: #c73a0f;
+    color: white;
+}
+.minus-btn{
+    background-color: transparent;
+    border: 1px solid white;
+    border-radius: 50%;
+    padding: 8px 4px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    background: url(/assets/images/icon-decrement-quantity.svg) no-repeat center center;
+}
+.minus-btn:hover{
+    filter: grayscale(100%);
+}
+.add-btn{
+    background-color: transparent;
+    border: 1px solid white;
+    border-radius: 50%;
+    padding: 4px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    background: url(/assets/images/icon-increment-quantity.svg) no-repeat center center;
+    background-position:center center;
+}
 
-.inner-btn {
-    background-color: #fff;
-    color: #c73a0f;
-    border: 1px solid;
-    border-radius: 50%;
-    padding: 1px 3px;
-    font-size: 16px;
-    cursor: pointer;
-}
-.inner-btn .active{
-    color: #c73a0f;
-    border: 1px solid;
-    border-radius: 50%;
-    padding: 1px 3px;
-    font-size: 16px;
-    cursor: pointer;
-}
-.quantity {
-    font-size: 18px;
-    padding: 0 10px;
-    color: #fff;
-}

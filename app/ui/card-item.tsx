@@ -35,12 +35,28 @@ const CardItem = ({ item }: any) => {
                   height={150}
                   className="rounded-md flex-none block md:hidden lg:hidden"
                 />              
-                <div>                  
+                <div className="">                  
                     {cartItems[item.id] ? (
-                    <div className="flex mx-auto justify-around bg-red rounded-full font-bold max-w-40 p-1">
-                        <button onClick={()=>decreaseQuantity(item.id)} className="inner-btn">-</button>
+                    <div className="add-or-remove-item flex mx-auto border rounded-full border-red px-7 py-2 font-bold ">
+                    <button onClick={() => decreaseQuantity(item.id)} className="minus-btn " >
+                      <Image
+                        src="/assets/images/icon-decrement-quantity.svg"
+                        width={10}
+                        height={10}
+                        alt="Decrement button"
+                        className="opacity-0"
+                      />                    
+                    </button>
                         <span className="quantity">{cartItems[item.id]?.quantity}</span>
-                        <button onClick={()=>increaseQuantity(item.id)} className="inner-btn">+</button>
+                      <button onClick={() => increaseQuantity(item.id)} className="add-btn">
+                        <Image
+                          src="/assets/images/icon-increment-quantity.svg"
+                          width={12}
+                          height={12}
+                          alt="Increment button"
+                          className="opacity-0 "
+                        />
+                      </button>
                     </div>
           ) : (
               <button
