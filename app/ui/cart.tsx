@@ -1,4 +1,6 @@
+"use client";
 import React from 'react';
+import Image from 'next/image';
 import { MdOutlineCancel } from "react-icons/md";
 import { useCart } from '../lib/contexts/cartcontext'
 import { Card, CardFooter } from "./components/ui/card"
@@ -49,7 +51,16 @@ const Cart = () => {
                         <div className='font-bold  text-rose-900'>${subTotal.toFixed(2) }</div>
                         </div>                        
                         </Card>
-                        <div className=" flex justify-center  p-2 bg-rose-100 mt-2 rounded-lg text-xs">This is <span className="font-bold mx-1">carbon-neutral</span> delivery</div>
+                        <div className=" flex justify-center items-center  p-2 bg-rose-100 mt-2 rounded-lg text-xs">
+                            <Image
+                                src="/assets/images/icon-carbon-neutral.svg"
+                                alt='Carbon-neutral image'
+                                width={20}
+                                height={20}
+                                className='mx-2'
+                            />
+                            <p className="">This is <span className="font-bold mx-1">carbon-neutral</span> delivery</p>
+                        </div>
                 <button className='bg-red flex text-white mx-auto w-full text-center justify-center py-1 px-7 rounded-full mt-3'>Confirm Order</button>
                 </div>    
             )}        
