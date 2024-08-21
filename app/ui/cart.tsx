@@ -72,10 +72,9 @@ const Cart = () => {
                             />
                             <p className="">This is <span className="font-bold mx-1">carbon-neutral</span> delivery</p>
                         </div>
-                        <button className='bg-red flex text-white mx-auto w-full text-center justify-center py-1 px-7 rounded-full mt-3'>Confirm Order</button>
                         <Dialog>
                             <DialogTrigger asChild>
-                                <Button variant="outline">Edit Profile</Button>
+                                <Button  className='bg-red flex text-white mx-auto w-full text-center justify-center py-1 px-7 rounded-full mt-3' variant="outline">Confirm Order</Button>
                             </DialogTrigger>
                             <DialogContent className="sm:max-w-[425px]">
                                 <DialogHeader>
