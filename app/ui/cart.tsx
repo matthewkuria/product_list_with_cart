@@ -16,6 +16,7 @@ import {
 import { Button } from './components/ui/button';
 import { Label } from './components/ui/label';
 import { Input } from './components/ui/input';
+import Link from 'next/link';
 const Cart = () => {
     const { cartItems, removeFromCart } = useCart();
     console.log(cartItems)
@@ -117,8 +118,8 @@ const Cart = () => {
                                     <div>Order Total</div>
                                     <div className='font-bold  text-rose-900'>${subTotal.toFixed(2) }</div>
                                 </div>
-                                <DialogFooter className='py-4'>
-                                    <Button className='bg-red flex text-white mx-auto w-full text-center justify-center py-1 px-7 rounded-full mt-3' variant="outline">Start New Order</Button>                                    
+                                <DialogFooter className='py-4'>                                    
+                                    <Button  className='bg-red flex text-white mx-auto w-full text-center justify-center py-1 px-7 rounded-full mt-3' variant="outline">Start New Order</Button>                                  
                                 </DialogFooter>
                             </DialogContent>
                             </Dialog>
