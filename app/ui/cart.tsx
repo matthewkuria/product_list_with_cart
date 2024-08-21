@@ -14,8 +14,6 @@ import {
   DialogTitle,
   DialogTrigger, } from '@/app/ui/components/ui/dialog';
 import { Button } from './components/ui/button';
-import { Label } from './components/ui/label';
-import { Input } from './components/ui/input';
 import Link from 'next/link';
 const Cart = () => {
     const { cartItems, removeFromCart } = useCart();
@@ -86,24 +84,24 @@ const Cart = () => {
                                         height={30}
                                         width={30}
                                     />
-                                <DialogTitle className='font-bold text-2xl'>Order Confirmed</DialogTitle>
-                                <DialogDescription>
+                                <DialogTitle className='font-bold text-2xl py-1'>Order Confirmed</DialogTitle>
+                                <DialogDescription className='text-rose-500 py-2'>
                                     We hope you enjoy your food! 
                                 </DialogDescription>
                                 </DialogHeader>
                                 {cartItemsArray.map((item: any) => (
                                     <>
-                                    <div key={item.id} className='flex flex-row text-sm justify-between p-2 bg-rose-100 my-0'>                                       
+                                    <div key={item.id} className='flex flex-row text-xs justify-between items-center px-5 py-2 rounded-sm bg-rose-100 mt-0'>                                       
                                         <div className="flex">                                
                                             <Image
-                                            src={item.image}
-                                            alt="The image of {}"
-                                            height={10}
-                                                width={10}
+                                                src={item.image.thumbnail}
+                                                alt="The image of {}"
+                                                height={40}
+                                                width={40}
                                                 className='block mx-1'
                                             />
                                             <div className="flex flex-col justify-around font-bold text-xs mx-2">                                              
-                                                <h4>{item.name}</h4>
+                                                <p>{item.name}</p>
                                                 <div className="flex">
                                                     <p className='text-red '>x{ item.quantity}</p> 
                                                     <p className="text-rose-400 font-normal px-2">@${item.price }</p>
@@ -111,7 +109,7 @@ const Cart = () => {
                                             </div>
                                         </div>
                                         <div className="">
-                                            <p className="font-bold">${subTotal.toFixed(2) }</p>
+                                            <p className="font-semibold ">${subTotal.toFixed(2) }</p>
                                         </div>
                                     </div>                                    
                                     </>
