@@ -78,35 +78,14 @@ const Cart = () => {
                             </DialogTrigger>
                             <DialogContent className="sm:max-w-[425px]">
                                 <DialogHeader>
-                                <DialogTitle>Edit profile</DialogTitle>
+                                <DialogTitle>Order Confirmed</DialogTitle>
                                 <DialogDescription>
-                                    Make changes to your profile here. 
+                                    We hope you enjoy your food! 
                                 </DialogDescription>
                                 </DialogHeader>
-                                <div className="grid gap-4 py-4">
-                                <div className="grid grid-cols-4 items-center gap-4">
-                                    <Label htmlFor="name" className="text-right">
-                                    Name
-                                    </Label>
-                                    <Input
-                                    id="name"
-                                    defaultValue="Pedro Duarte"
-                                    className="col-span-3"
-                                    />
-                                </div>
-                                <div className="grid grid-cols-4 items-center gap-4">
-                                    <Label htmlFor="username" className="text-right">
-                                    Username
-                                    </Label>
-                                    <Input
-                                    id="username"
-                                    defaultValue="@peduarte"
-                                    className="col-span-3"
-                                    />
-                                </div>
-                                </div>
+                              
                                 <DialogFooter>
-                                <Button type="submit">Save changes</Button>
+                                <Button  className='bg-red flex text-white mx-auto w-full text-center justify-center py-1 px-7 rounded-full mt-3' variant="outline">Start New Order</Button>
                                 </DialogFooter>
                             </DialogContent>
                             </Dialog>
