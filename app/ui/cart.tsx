@@ -85,7 +85,7 @@ const Cart = () => {
                                         height={30}
                                         width={30}
                                     />
-                                <DialogTitle>Order Confirmed</DialogTitle>
+                                <DialogTitle className='font-bold text-2xl'>Order Confirmed</DialogTitle>
                                 <DialogDescription>
                                     We hope you enjoy your food! 
                                 </DialogDescription>
