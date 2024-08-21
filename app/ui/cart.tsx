@@ -104,11 +104,14 @@ const Cart = () => {
                                             />
                                             <div className="flex flex-col justify-around font-bold text-xs mx-2">                                              
                                                 <h4>{item.name}</h4>
-                                                <p className='text-red font-bold'>x{ item.quantity}</p>                                                
+                                                <div className="flex">
+                                                    <p className='text-red '>x{ item.quantity}</p> 
+                                                    <p className="text-rose-400 font-normal px-2">@${item.price }</p>
+                                                </div>                                               
                                             </div>
                                         </div>
                                         <div className="">
-                                            <p className="font-bold">${subTotal }</p>
+                                            <p className="font-bold">${subTotal.toFixed(2) }</p>
                                         </div>
                                     </div>                                    
                                     </>
