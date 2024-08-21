@@ -118,7 +118,7 @@ const Cart = () => {
                                     <div className='font-bold  text-rose-900'>${totalCartPrice.toFixed(2) }</div>
                                 </div>
                                 <DialogFooter className='py-4'>                                    
-                                    <Button  className='bg-red flex text-white mx-auto w-full text-center justify-center py-1 px-7 rounded-full mt-3' variant="outline">Start New Order</Button>                                  
+                                    <Button  className='bg-red flex text-white mx-auto w-full text-center justify-center py-1 px-7 rounded-full mt-3' variant="outline"><Link href="/">Start New Order</Link></Button>                                  
                                 </DialogFooter>
                             </DialogContent>
                             </Dialog>
