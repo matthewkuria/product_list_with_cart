@@ -24,13 +24,11 @@ const Cart = () => {
     const isEmpty = Object.keys(cartItems).length === 0;
 
 //   // Calculate the cart subtotal
-    const subTotal = cartItemsArray.reduce((acc:number, item:any) => {
+    const totalCartPrice = cartItemsArray.reduce((acc:number, item:any) => {
         return acc + item.price * item.quantity;
     }, 0);
 //       // Calculate the total item count
-    const itemSubtotal = cartItemsArray.reduce((acc:number, item:any) => {
-        return  item.price * item.quantity;
-    }, 0);
+   
     return (
         <div>
              {isEmpty ? (
@@ -48,7 +46,7 @@ const Cart = () => {
                                     <div className="flex justify-around text-rose-300 ">
                                         <p className='text-red font-bold'>x{ item.quantity}</p>
                                         <p>@${item.price}</p>
-                                        <p className="font-bold">${itemSubtotal }</p>
+                                        <p className="font-bold">${item.price * item.quantity!}</p>
                                     </div>
                                 </div>
                                 <button className=' flex ' onClick={() => removeFromCart(item.id)}> <MdOutlineCancel /></button>
@@ -58,7 +56,7 @@ const Cart = () => {
            
                         <div className="text-rose-500 flex justify-between p-2 mt-auto">
                             <div>Order Total</div>
-                            <div className='font-bold  text-rose-900'>${subTotal.toFixed(2) }</div>
+                            <div className='font-bold  text-rose-900'>${totalCartPrice.toFixed(2) }</div>
                         </div>                        
                         </Card>
                         <div className=" flex justify-center items-center  p-2 bg-rose-100 mt-2 rounded-lg text-xs">
@@ -109,7 +107,7 @@ const Cart = () => {
                                             </div>
                                         </div>
                                         <div className="">
-                                            <p className="font-semibold ">${subTotal.toFixed(2) }</p>
+                                            <p className="font-semibold ">${item.price * item.quantity!}</p>
                                         </div>
                                     </div>                                    
                                     </>
@@ -117,7 +115,7 @@ const Cart = () => {
                                 ))}                                
                                 <div className="text-rose-500 flex justify-between p-2 mt-auto">
                                     <div>Order Total</div>
-                                    <div className='font-bold  text-rose-900'>${subTotal.toFixed(2) }</div>
+                                    <div className='font-bold  text-rose-900'>${totalCartPrice.toFixed(2) }</div>
                                 </div>
                                 <DialogFooter className='py-4'>                                    
                                     <Button  className='bg-red flex text-white mx-auto w-full text-center justify-center py-1 px-7 rounded-full mt-3' variant="outline">Start New Order</Button>                                  
