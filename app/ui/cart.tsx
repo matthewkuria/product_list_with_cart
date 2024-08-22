@@ -35,15 +35,14 @@ const Cart = () => {
                    <EmptyCart />
             ) : (
             <div className='bg-white p-3'>
-            <Card className="w-[280px] h-auto bg-white border-none">
-            <p className="text-red text-[16px] font-bold p-4">Your Cart <span>({ cartItemsArray.length})</span></p>
-               
+            <Card className=" h-auto bg-white border-none">
+            <p className="text-red text-[16px] font-bold p-4">Your Cart <span>({ cartItemsArray.length})</span></p>               
                     <ul>
                         {cartItemsArray.map((item:any) => (
-                            <div  key={item.id} className='flex flex-row text-sm justify-between p-5 '>
-                                <div className="flex flex-col">
+                            <div  key={item.id} className='flex flex-row text-sm items-center justify-between p-4 w-full'>
+                                <div className="flex flex-col text-left">
                                     <h4>{item.name}</h4>
-                                    <div className="flex justify-around text-rose-300 ">
+                                    <div className="flex gap-2 text-rose-300 ">
                                         <p className='text-red font-bold'>x{ item.quantity}</p>
                                         <p>@${item.price}</p>
                                         <p className="font-bold">${item.price * item.quantity!}</p>
@@ -110,8 +109,7 @@ const Cart = () => {
                                             <p className="font-semibold ">${item.price * item.quantity!}</p>
                                         </div>
                                     </div>                                    
-                                    </>
-                                                
+                                    </>                                               
                                 ))}                                
                                 <div className="text-rose-500 flex justify-between p-2 mt-auto">
                                     <div>Order Total</div>

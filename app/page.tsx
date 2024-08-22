@@ -14,10 +14,10 @@ export default function Home() {
     const isEmpty = Object.keys(cartItems).length === 0;
 
   return (
-    <main className="grid grid-cols-1 md:grid-cols-2 p-12 w-full bg-rose-100">
+    <main className="grid grid-cols-1 md:grid-cols-2 p-10 w-full bg-rose-100">
       <div className="">
         <h1 className="font-bold my-5 text-3xl">Desserts</h1>
-        <div className="md:max-w-md lg:max-w-3xl grid grid-cols-1 md:flex md:flex-row lg:flex md:flex-wrap gap-10">
+        <div className="md:max-w-md lg:max-w-3xl grid grid-cols-1 md:grid-cols-3 lg:grid-cols-3 gap-4">
           {/* Map through the data from the JSON file and return a  card for each item */}
             {data.map((item) => {
               return (
