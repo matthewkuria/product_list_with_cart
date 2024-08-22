@@ -8,7 +8,7 @@ const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "Product List with a cart",
-  description: "Developed by FrontendMentor and built by Matthew Kuria",
+  description: "Designed by FrontendMentor and built by Matthew Kuria",
 };
 
 export default function RootLayout({
