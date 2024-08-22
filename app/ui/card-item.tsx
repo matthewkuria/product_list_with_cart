@@ -1,12 +1,11 @@
 "use client"
 import Image from "next/image"
 import { Card, CardFooter } from "./components/ui/card"
-import { Button } from "./components/ui/button"
-import { useState } from "react"
 import { useCart } from "../lib/contexts/cartcontext"
+import { IProduct } from "../interfaces/globalTypes"
 
 
-const CardItem = ({ item }: any) => { 
+const CardItem = ({item}:{item: any} ) => { 
   const { cartItems,addToCart, decreaseQuantity, increaseQuantity } = useCart();  
 
     return (

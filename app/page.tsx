@@ -5,7 +5,6 @@ import data from "./lib/data.json"
 import { Card,CardFooter,
 } from "./ui/components/ui/card";
 import CardItem from "./ui/card-item";
-import { useState } from "react";
 import Cart from "./ui/cart";
 import { useCart } from './lib/contexts/cartcontext'
 export default function Home() {

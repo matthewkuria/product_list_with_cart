@@ -1,13 +1,10 @@
 "use client";
 import { createContext, useState, useContext } from 'react';
-
 // Create the context
 const CartContext = createContext();
-
 // Create a provider component
 export const CartProvider = ({ children }) => {
     const [cartItems, setCartItems] = useState([]);
-
   const addToCart = (item) => {
         setCartItems((prevCartItems) => {
             if (prevCartItems[item.id]) {
