@@ -60,7 +60,7 @@ const CardItem = ({ item }: any) => {
                     </div>
           ) : (
               <button
-                className="flex mx-auto border rounded-full border-red px-7 py-2  hover:text-red font-bold "
+                className="flex mx-auto border rounded-full border-red px-7 py-2  hover:text-red font-bold md:px-3 md:py-1 "
                 onClick={() => addToCart(item)}
               >
                 <Image
